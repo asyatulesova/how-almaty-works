@@ -97,6 +97,24 @@
   <script>
     const map = L.map('map').setView([43.225, 76.845], 14);
 
+      const boundary = [
+        [43.219788, 76.851127],
+        [43.216649, 76.839476],
+        [43.209522, 76.842552],
+        [43.213686, 76.856650]
+      ];
+      
+      const area = L.polygon(boundary, {
+        color: '#245b46',
+        weight: 3,
+        fillColor: '#68a88a',
+        fillOpacity: 0.18
+      }).addTo(map);
+
+area.bindPopup('Наша территория исследования: Мамыр');
+
+map.fitBounds(area.getBounds());
+
     L.tileLayer(
       'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
       {
