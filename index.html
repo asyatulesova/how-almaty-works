@@ -128,7 +128,17 @@ map.fitBounds(area.getBounds());
 
     L.marker([43.212018, 76.846581])
       .addTo(educationLayer)
-      .bindPopup('<b>Школа-лицей №173</b><br>Мамыр-1, дом 21');
+      .bindPopup(`
+        <b>Школа-лицей №173</b><br>
+        Мамыр-1, дом 21<br>
+        Государственная школа (КГУ)<br><br>
+        <a href="https://173.alschool.kz/" target="_blank">
+          Сайт школы
+        </a><br>
+        <a href="https://satypalu.gov.kz/kz/registry/show_supplier/9867" target="_blank">
+          Государственный реестр
+        </a>
+      `);
     
     L.control.layers(null, {
       'Образование': educationLayer
