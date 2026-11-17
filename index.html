@@ -124,9 +124,15 @@ map.fitBounds(area.getBounds());
       }
     ).addTo(map);
  
+    const educationLayer = L.layerGroup();
+
     L.marker([43.212018, 76.846581])
-      .addTo(map)
+      .addTo(educationLayer)
       .bindPopup('<b>Школа-лицей №173</b><br>Мамыр-1, дом 21');
+    
+    L.control.layers(null, {
+      'Образование': educationLayer
+    }).addTo(map);
 
   </script>
 </body>
